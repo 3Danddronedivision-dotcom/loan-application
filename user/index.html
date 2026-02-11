@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project Loan Application</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Project Loan Application Form</h1>
+
+  <!-- ADMIN LOGIN LINK -->
+  <div style="text-align:right;">
+    <a href="../admin/login.html" target="_blank">🔐 Admin Login</a>
+  </div>
+
+  <form id="loanForm">
+    <!-- YOUR EXISTING FORM FIELDS -->
+    
+    <input name="Name_As_Per_ADHAR" placeholder="Name as per Aadhaar" required>
+    <input name="Mobile_Number" placeholder="Mobile Number" required>
+
+    <!-- (keep rest of your form same) -->
+
+    <button type="submit">Submit Application</button>
+  </form>
+</div>
+
+<script>
+document.getElementById("loanForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = Object.fromEntries(new FormData(this));
+
+  fetch("YOUR_GOOGLE_SCRIPT_WEBAPP_URL", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(r => {
+    if(r.status==="success"){
+      alert("✅ Application Submitted Successfully");
+      this.reset();
+    }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -32,7 +32,7 @@ document.getElementById("loanForm").addEventListener("submit", function(e){
 
   const data = Object.fromEntries(new FormData(this));
 
-  fetch("https://docs.google.com/spreadsheets/d/1aX2gzf0M4x8lQefG_LF4XMuw5MBB0VfEMQnDjJcwIZ4/edit?usp=sharing", {
+  fetch("https://script.google.com/a/macros/surajfoundation.org.in/s/AKfycbyyUSDziexZwZ--gepbLlUp0qc7GbyiadJ3DVALmUb5wWYreWaMmq5krQE3TpOql5RaGA/exec", {
     method: "POST",
     body: JSON.stringify(data)
   })

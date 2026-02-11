@@ -32,7 +32,7 @@ document.getElementById("loanForm").addEventListener("submit", function(e){
 
   const data = Object.fromEntries(new FormData(this));
 
-  fetch("YOUR_GOOGLE_SCRIPT_WEBAPP_URL", {
+  fetch("https://docs.google.com/spreadsheets/d/1aX2gzf0M4x8lQefG_LF4XMuw5MBB0VfEMQnDjJcwIZ4/edit?usp=sharing", {
     method: "POST",
     body: JSON.stringify(data)
   })

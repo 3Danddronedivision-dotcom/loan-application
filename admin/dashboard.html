@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<script>
+if(localStorage.getItem("adminLogged")!=="yes"){
+  location.href="login.html";
+}
+</script>
+
+<div class="container">
+<h2>Admin Dashboard</h2>
+
+<button onclick="logout()">Logout</button>
+
+<iframe 
+  src="YOUR_GOOGLE_SHEET_VIEW_LINK"
+  width="100%"
+  height="600"
+  style="border:none">
+</iframe>
+</div>
+
+<script>
+function logout(){
+  localStorage.removeItem("adminLogged");
+  location.href="login.html";
+}
+</script>
+
+</body>
+</html>
